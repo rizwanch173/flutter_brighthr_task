@@ -39,8 +39,6 @@ Future<void> initializeApp({
         log(details.exceptionAsString(), stackTrace: details.stack);
       };
 
-      // Initialize secure logger
-
       runApp(const App());
     },
     (error, stackTrace) async {

@@ -103,9 +103,9 @@ class ArticleView extends StatelessWidget {
                     ),
                 // Saved Articles Tab
                 ListView.builder(
-                  itemCount: state.savedArticles?.length ?? 0,
+                  itemCount: state.savedArticles.length,
                   itemBuilder: (context, index) {
-                    final article = state.savedArticles![index];
+                    final article = state.savedArticles[index];
                     return ArticleCard(
                       article: article,
                       isSaved: true,
