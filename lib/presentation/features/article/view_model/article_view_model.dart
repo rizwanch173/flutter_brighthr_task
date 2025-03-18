@@ -3,8 +3,6 @@ import 'package:flutter_brighthr_task/presentation/routes/app_router.gr.dart';
 import 'package:flutter_brighthr_task/presentation/routes/navigation_handler.dart';
 import 'package:flutter_brighthr_task/presentation/state_manager/view_model.dart';
 import 'package:injectable/injectable.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
 import 'package:flutter_brighthr_task/domain/entity/article_entity.dart';
 import 'package:flutter_brighthr_task/domain/usecases/article_fetech_usecase.dart';
 import 'package:flutter_brighthr_task/domain/repository/article_repository.dart';
@@ -107,15 +105,5 @@ class ArticleViewModel extends ViewModel<HomeState> {
     await navigateTo(ArticleDetailRoute(article: article));
     await loadSavedArticles();
     await updateSavedArticlesCount();
-  }
-
-  Future<void> updateArticle(ArticleEntity article) async {
-    print("object");
-    print(state.savedArticles);
-    final updatedSavedArticles = [...state.savedArticles, article];
-    state = state.copyWith(
-      savedArticles: updatedSavedArticles,
-      savedArticlesCount: state.savedArticlesCount + 1,
-    );
   }
 }
