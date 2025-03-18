@@ -25,6 +25,7 @@ class ArticleDetailScreen extends StatelessWidget {
       builder: (context, viewModel, state) {
         return Scaffold(
           appBar: AppBar(
+            centerTitle: true,
             title: Text(Localization.value.article_detail_title),
             actions: [
               IconButton(
