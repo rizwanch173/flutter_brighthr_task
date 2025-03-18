@@ -65,22 +65,37 @@ class ArticleView extends StatelessWidget {
             body: TabBarView(
               children: [
                 // All Articles Tab
-                ListView.builder(
-                  itemCount: state.articles.length,
-                  itemBuilder: (context, index) {
-                    final article = state.articles[index];
-                    final isSaved = state.savedArticles.any(
-                      (a) => a.id == article.id,
-                    );
-                    return ArticleCard(
-                      article: article,
-                      isSaved: isSaved,
-                      onBookmarkPressed: () {
-                        viewModel.toggleBookmark(article);
+                state.errorMessage.isNotEmpty
+                    ? Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Text(
+                          state.errorMessage,
+                          textAlign: TextAlign.center,
+                          style: Theme.of(
+                            context,
+                          ).textTheme.titleMedium?.copyWith(
+                            color: Theme.of(context).colorScheme.error,
+                          ),
+                        ),
+                      ),
+                    )
+                    : ListView.builder(
+                      itemCount: state.articles.length,
+                      itemBuilder: (context, index) {
+                        final article = state.articles[index];
+                        final isSaved = state.savedArticles.any(
+                          (a) => a.id == article.id,
+                        );
+                        return ArticleCard(
+                          article: article,
+                          isSaved: isSaved,
+                          onBookmarkPressed: () {
+                            viewModel.toggleBookmark(article);
+                          },
+                        );
                       },
-                    );
-                  },
-                ),
+                    ),
                 // Saved Articles Tab
                 ListView.builder(
                   itemCount: state.savedArticles?.length ?? 0,
