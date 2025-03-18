@@ -3,11 +3,13 @@ import 'package:flutter_brighthr_task/domain/entity/article_entity.dart';
 import 'package:flutter_brighthr_task/presentation/res/textstyles/txtfiles.dart';
 import 'package:flutter_brighthr_task/presentation/routes/app_router.gr.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter_brighthr_task/presentation/routes/navigation_handler.dart';
 
 class ArticleCard extends StatelessWidget {
   final ArticleEntity article;
   final bool isSaved;
   final VoidCallback onBookmarkPressed;
+  final VoidCallback onTap;
   final bool showBookmarkIcon;
 
   const ArticleCard({
@@ -15,6 +17,7 @@ class ArticleCard extends StatelessWidget {
     required this.article,
     required this.isSaved,
     required this.onBookmarkPressed,
+    required this.onTap,
     this.showBookmarkIcon = true,
   });
 
@@ -40,9 +43,7 @@ class ArticleCard extends StatelessWidget {
                   onPressed: onBookmarkPressed,
                 )
                 : null,
-        onTap: () {
-          context.router.push(ArticleDetailRoute(article: article));
-        },
+        onTap: onTap,
       ),
     );
   }

@@ -1,4 +1,6 @@
 import 'package:flutter_brighthr_task/presentation/features/article/state/home_state.dart';
+import 'package:flutter_brighthr_task/presentation/routes/app_router.gr.dart';
+import 'package:flutter_brighthr_task/presentation/routes/navigation_handler.dart';
 import 'package:flutter_brighthr_task/presentation/state_manager/view_model.dart';
 import 'package:injectable/injectable.dart';
 import 'package:http/http.dart' as http;
@@ -99,5 +101,21 @@ class ArticleViewModel extends ViewModel<HomeState> {
     } catch (e) {
       print('Error in toggleBookmark: $e');
     }
+  }
+
+  naviageToDetailScreen(ArticleEntity article) async {
+    await navigateTo(ArticleDetailRoute(article: article));
+    await loadSavedArticles();
+    await updateSavedArticlesCount();
+  }
+
+  Future<void> updateArticle(ArticleEntity article) async {
+    print("object");
+    print(state.savedArticles);
+    final updatedSavedArticles = [...state.savedArticles, article];
+    state = state.copyWith(
+      savedArticles: updatedSavedArticles,
+      savedArticlesCount: state.savedArticlesCount + 1,
+    );
   }
 }

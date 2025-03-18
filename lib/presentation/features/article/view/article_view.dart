@@ -4,7 +4,6 @@ import 'package:flutter_brighthr_task/presentation/features/article/state/home_s
 import 'package:flutter_brighthr_task/presentation/features/article/view_model/article_view_model.dart';
 import 'package:flutter_brighthr_task/presentation/features/article/widgets/article_card.dart';
 import 'package:flutter_brighthr_task/presentation/res/textstyles/txtfiles.dart';
-
 import 'package:flutter_brighthr_task/presentation/state_manager/base_view.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
@@ -93,6 +92,9 @@ class ArticleView extends StatelessWidget {
                         return ArticleCard(
                           article: article,
                           isSaved: isSaved,
+                          onTap: () {
+                            viewModel.naviageToDetailScreen(article);
+                          },
                           onBookmarkPressed: () {
                             viewModel.toggleBookmark(article);
                           },
@@ -107,6 +109,9 @@ class ArticleView extends StatelessWidget {
                     return ArticleCard(
                       article: article,
                       isSaved: true,
+                      onTap: () {
+                        viewModel.naviageToDetailScreen(article);
+                      },
                       onBookmarkPressed: () {
                         viewModel.toggleBookmark(article);
                       },

@@ -57,6 +57,7 @@ void main() {
           home: Scaffold(
             body: ArticleCard(
               article: testArticle,
+              onTap: () {},
               isSaved: false,
               onBookmarkPressed: () {},
               showBookmarkIcon: true,
@@ -78,6 +79,7 @@ void main() {
           home: Scaffold(
             body: ArticleCard(
               article: testArticle,
+              onTap: () {},
               isSaved: true,
               onBookmarkPressed: () {},
               showBookmarkIcon: true,
