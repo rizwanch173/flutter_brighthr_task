@@ -1,6 +1,5 @@
 import 'package:flutter_brighthr_task/domain/repository/article_repository.dart';
 import 'package:flutter_brighthr_task/domain/usecases/article_comments_fetch_usecase.dart';
-import 'package:flutter_brighthr_task/presentation/features/article/view_model/article_view_model.dart';
 import 'package:flutter_brighthr_task/presentation/features/article_detail/state/article_detail_state.dart';
 import 'package:flutter_brighthr_task/presentation/state_manager/view_model.dart';
 import 'package:injectable/injectable.dart';

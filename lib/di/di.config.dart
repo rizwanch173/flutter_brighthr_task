@@ -90,7 +90,6 @@ extension GetItInjectableX on _i174.GetIt {
       () => _i441.ArticleDetailViewModel(
         gh<_i94.ArticleCommentsFetchUseCase>(),
         gh<_i532.ArticleRepository>(),
-        gh<_i202.ArticleViewModel>(),
       ),
     );
     return this;
