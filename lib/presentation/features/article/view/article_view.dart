@@ -22,7 +22,10 @@ class ArticleView extends StatelessWidget {
 
       builder: (context, viewModel, state) {
         if (state.isLoading) {
-          return const Center(child: CupertinoActivityIndicator());
+          return Container(
+            color: Colors.white,
+            child: const Center(child: CupertinoActivityIndicator(radius: 15)),
+          );
         }
 
         return DefaultTabController(
