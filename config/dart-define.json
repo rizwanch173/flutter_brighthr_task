@@ -1,0 +1,5 @@
+{
+  "ENVIRONMENT": "production",
+  "API_URL": "https://api.arka.app/api/v1/",
+  "ROOT_URL": "https://arka.app/"
+}

@@ -1,0 +1,6 @@
+{
+  "ENVIRONMENT": "production",
+  "API_URL": "https://api.arka.app/api/v1/",
+  "ROOT_URL": "https://arka.app/",
+  "SENTRY_DNS": "https://18d0e03f17028acd1ca78887b6f09d51@o4508376380407808.ingest.us.sentry.io/4508376424251392"
+}
