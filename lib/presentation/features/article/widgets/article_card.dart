@@ -23,7 +23,7 @@ class ArticleCard extends StatelessWidget {
     return Card(
       margin: const EdgeInsets.all(8.0),
       child: ListTile(
-        title: Text(article.title, style: context.t11),
+        title: Text(article.title, style: context.t11!.copyWith(fontSize: 20)),
         subtitle: Text(
           article.body,
           maxLines: 2,
