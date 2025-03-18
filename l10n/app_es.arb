@@ -1,4 +1,7 @@
 {
-  "onboardingTile1Title": "Invierte en tu\nfuturo.",
-  "article_detail_title": "Detalle del Artículo"
+  "home_title": "Artículos",
+  "allArticles": "Todos los artículos",
+  "savedArticles": "Artículos guardados",
+  "view_all_comment_btn_tex": "Ver todos los comentarios",
+  "article_detail_title": "Detalle del artículo"
 }

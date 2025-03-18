@@ -11,14 +11,14 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:flutter_brighthr_task/data/source/local/article_local_storage.dart';
 
 void main() async {
-  bootstrap();
+  initializeApp();
 }
 
 void mainCommon({required Environment environment}) {
-  bootstrap();
+  initializeApp();
 }
 
-Future<void> bootstrap({
+Future<void> initializeApp({
   Environment environment = Environment.development,
 }) async {
   await runZonedGuarded(
@@ -28,8 +28,8 @@ Future<void> bootstrap({
 
       // Register dependencies and wait for RootChecker to be ready
       await registerDependencies();
-      final _articleLocalStorage = inject<ArticleLocalStorage>();
-      await _articleLocalStorage.init();
+      final articleLocalStorage = inject<ArticleLocalStorage>();
+      await articleLocalStorage.init();
 
       unawaited(
         SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]),
